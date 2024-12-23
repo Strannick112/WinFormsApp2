@@ -93,6 +93,11 @@ namespace WinFormsApp2
             }
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns.Insert(0, new DataGridViewColumn(new DataGridViewButtonCell()));
+
+            var my_teacher_combobox = new DataGridViewComboBoxColumn();
+            my_teacher_combobox.DataSource = new List<String> { "Stas", "Rustam", "Magomed"};
+            dataGridView1.Columns.Insert(0, my_teacher_combobox);
+            //dataGridView1.Columns[0].CellType 
         }
 
         private void dataGridView1_RowLeave(object sender, DataGridViewCellEventArgs e)
@@ -116,7 +121,7 @@ namespace WinFormsApp2
                             mysqlContext.SaveChanges();
                         }
                         else
-                        {
+                        {   
                             teacher = new Teacher();
                             teacher.FullName = dataGridView1.Rows[e.RowIndex].Cells[2].EditedFormattedValue.ToString();
                             teacher.Status = dataGridView1.Rows[e.RowIndex].Cells[3].EditedFormattedValue.ToString();
