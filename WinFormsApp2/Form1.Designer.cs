@@ -31,34 +31,58 @@ namespace WinFormsApp2
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dataGridView1 = new SimpleDataGridView();
+            comboBox1 = new ComboBox();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(69, 41);
+            dataGridView1.Location = new Point(12, 46);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(300, 188);
             dataGridView1.TabIndex = 0;
+            dataGridView1.RowLeave += dataGridView1_RowLeave;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Преподы", "Предметы" });
+            comboBox1.Location = new Point(12, 12);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 1;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(547, 168);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(250, 125);
+            panel1.TabIndex = 2;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1773, 450);
+            Controls.Add(panel1);
+            Controls.Add(comboBox1);
             Controls.Add(dataGridView1);
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private SimpleDataGridView dataGridView1;
+        private ComboBox comboBox1;
+        private Panel panel1;
     }
 }

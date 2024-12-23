@@ -16,4 +16,5 @@ public partial class Teacher
 
     [Browsable(false)]
     public virtual ICollection<Lecture> Lectures { get; set; } = new List<Lecture>();
+
 }
