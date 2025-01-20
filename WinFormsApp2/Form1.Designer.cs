@@ -33,7 +33,6 @@ namespace WinFormsApp2
         {
             dataGridView1 = new SimpleDataGridView();
             comboBox1 = new ComboBox();
-            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -45,8 +44,8 @@ namespace WinFormsApp2
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(300, 188);
             dataGridView1.TabIndex = 0;
-            dataGridView1.RowLeave += dataGridView1_RowLeave;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.RowLeave += dataGridView1_RowLeave;
             // 
             // comboBox1
             // 
@@ -58,19 +57,11 @@ namespace WinFormsApp2
             comboBox1.TabIndex = 1;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // panel1
-            // 
-            panel1.Location = new Point(547, 168);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(250, 125);
-            panel1.TabIndex = 2;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1773, 450);
-            Controls.Add(panel1);
             Controls.Add(comboBox1);
             Controls.Add(dataGridView1);
             Name = "Form1";
@@ -83,6 +74,5 @@ namespace WinFormsApp2
 
         private SimpleDataGridView dataGridView1;
         private ComboBox comboBox1;
-        private Panel panel1;
     }
 }
